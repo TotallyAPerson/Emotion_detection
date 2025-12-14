@@ -5,11 +5,11 @@ from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
 
-# Load model
+# loading the model boi
 model = load_model("emotion_model.h5")
 emotion_labels = ['Angry','Disgust','Fear','Happy','Neutral','Sad','Surprise']
 
-# Load face detector
+# loading face detector stuff
 face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
@@ -55,3 +55,4 @@ def video():
 
 if __name__ == "__main__":
     app.run(debug=True)
+#end of code here
