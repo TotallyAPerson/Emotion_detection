@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Facial Emotion Detection</title>
+
+    <!-- Silkscreen font -->
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Top bar -->
+    <div class="top-bar">
+        <h1>✨🎭 Live Facial Emotion Detection 🎭✨</h1>
+
+        <div class="info-container">
+            <span class="info-icon">👾</span>
+            <div class="info-box">
+                <strong></i>Mini Project 2025</i></strong><br><br>
+                3rd Semester<br>
+                CSE AIML Department<br><br>
+
+                Team Members:<br>
+                Angelina G : 1CR24CI004<br>
+                Arshitha S : 1CR24CI007<br>
+                Jahnvi V : 1CR24CI018<br><br>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <button onclick="toggleCamera()">Toggle Camera</button>
+    </div>
+
+    <!-- Video -->
+    <div class="video-container">
+        <img id="video-feed" src="{{ url_for('video') }}">
+    </div>
+
+    <script>
+        let cameraOn = true;
+
+        function toggleCamera() {
+            const img = document.getElementById("video-feed");
+
+            if (cameraOn) {
+                img.src = "";
+                cameraOn = false;
+            } else {
+                img.src = "{{ url_for('video') }}";
+                cameraOn = true;
+            }
+        }
+    </script>
+
+</body>
+</html>
